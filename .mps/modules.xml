@@ -4,6 +4,7 @@
     <projectModules>
       <modulePath path="$PROJECT_DIR$/languages/Concepttree/Concepttree.mpl" folder="" />
       <modulePath path="$PROJECT_DIR$/languages/Concepttree/sandbox/Concepttree.sandbox.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/solutions/ConceptExplorerPlugin.build/ConceptExplorerPlugin.build.msd" folder="" />
       <modulePath path="$PROJECT_DIR$/solutions/ConceptExplorerPlugin/ConceptExplorerPlugin.msd" folder="" />
     </projectModules>
   </component>

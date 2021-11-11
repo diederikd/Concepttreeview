@@ -55,6 +55,9 @@
     </generator>
   </generators>
   <sourcePath />
+  <dependencies>
+    <dependency reexport="false">8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)</dependency>
+  </dependencies>
   <languageVersions>
     <language slang="l:c73b17af-16a1-4490-8072-8a84937c5206:com.mbeddr.mpsutil.treenotation" version="0" />
     <language slang="l:bda054c4-5d71-46ca-aba0-7104e3070b5a:com.mbeddr.mpsutil.treenotation.styles" version="0" />
