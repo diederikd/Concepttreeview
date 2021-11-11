@@ -184,44 +184,44 @@
       <node concept="3cqZAl" id="2An9ut3uBDb" role="3clF45" />
     </node>
     <node concept="3Tm1VV" id="2An9ut3t$cD" role="1B3o_S" />
-    <node concept="2rhieH" id="1O5$XhBXs$d" role="lGtFl">
+    <node concept="2rhieH" id="1h02rYC3dAp" role="lGtFl">
       <property role="TrG5h" value="jetbrains.mps.baseLanguage.structure.ClassConcept" />
-      <node concept="2rhieG" id="1O5$XhBXs$e" role="2rhiex">
+      <node concept="2rhieG" id="1h02rYC3dAq" role="2rhiex">
         <property role="TrG5h" value="ClassConcept" />
-        <node concept="2rhieG" id="1O5$XhBXs$f" role="2rhieJ">
+        <node concept="2rhieG" id="1h02rYC3dAr" role="2rhieJ">
           <property role="TrG5h" value="FieldDeclaration" />
-          <node concept="2rhieG" id="1O5$XhBXs$g" role="2rhieJ">
+          <node concept="2rhieG" id="1h02rYC3dAs" role="2rhieJ">
             <property role="TrG5h" value="IntegerType" />
           </node>
-          <node concept="2rhieG" id="1O5$XhBXs$h" role="2rhieJ">
+          <node concept="2rhieG" id="1h02rYC3dAt" role="2rhieJ">
             <property role="TrG5h" value="IntegerConstant" />
           </node>
         </node>
-        <node concept="2rhieG" id="1O5$XhBXs$i" role="2rhieJ">
+        <node concept="2rhieG" id="1h02rYC3dAu" role="2rhieJ">
           <property role="TrG5h" value="InstanceMethodDeclaration" />
-          <node concept="2rhieG" id="1O5$XhBXs$j" role="2rhieJ">
+          <node concept="2rhieG" id="1h02rYC3dAv" role="2rhieJ">
             <property role="TrG5h" value="StatementList" />
-            <node concept="2rhieG" id="1O5$XhBXs$k" role="2rhieJ">
+            <node concept="2rhieG" id="1h02rYC3dAw" role="2rhieJ">
               <property role="TrG5h" value="IfStatement" />
-              <node concept="2rhieG" id="1O5$XhBXs$l" role="2rhieJ">
+              <node concept="2rhieG" id="1h02rYC3dAx" role="2rhieJ">
                 <property role="TrG5h" value="GreaterThanExpression" />
-                <node concept="2rhieG" id="1O5$XhBXs$m" role="2rhieJ">
+                <node concept="2rhieG" id="1h02rYC3dAy" role="2rhieJ">
                   <property role="TrG5h" value="IntegerConstant" />
                 </node>
-                <node concept="2rhieG" id="1O5$XhBXs$n" role="2rhieJ">
+                <node concept="2rhieG" id="1h02rYC3dAz" role="2rhieJ">
                   <property role="TrG5h" value="VariableReference" />
                 </node>
               </node>
-              <node concept="2rhieG" id="1O5$XhBXs$o" role="2rhieJ">
+              <node concept="2rhieG" id="1h02rYC3dA$" role="2rhieJ">
                 <property role="TrG5h" value="StatementList" />
-                <node concept="2rhieG" id="1O5$XhBXs$p" role="2rhieJ">
+                <node concept="2rhieG" id="1h02rYC3dA_" role="2rhieJ">
                   <property role="TrG5h" value="ExpressionStatement" />
-                  <node concept="2rhieG" id="1O5$XhBXs$q" role="2rhieJ">
+                  <node concept="2rhieG" id="1h02rYC3dAA" role="2rhieJ">
                     <property role="TrG5h" value="AssignmentExpression" />
-                    <node concept="2rhieG" id="1O5$XhBXs$r" role="2rhieJ">
+                    <node concept="2rhieG" id="1h02rYC3dAB" role="2rhieJ">
                       <property role="TrG5h" value="IntegerConstant" />
                     </node>
-                    <node concept="2rhieG" id="1O5$XhBXs$s" role="2rhieJ">
+                    <node concept="2rhieG" id="1h02rYC3dAC" role="2rhieJ">
                       <property role="TrG5h" value="VariableReference" />
                     </node>
                   </node>
@@ -229,11 +229,11 @@
               </node>
             </node>
           </node>
-          <node concept="2rhieG" id="1O5$XhBXs$t" role="2rhieJ">
+          <node concept="2rhieG" id="1h02rYC3dAD" role="2rhieJ">
             <property role="TrG5h" value="VoidType" />
           </node>
         </node>
-        <node concept="2rhieG" id="1O5$XhBXs$u" role="2rhieJ">
+        <node concept="2rhieG" id="1h02rYC3dAE" role="2rhieJ">
           <property role="TrG5h" value="PublicVisibility" />
         </node>
       </node>

@@ -71,7 +71,7 @@
   <node concept="1TIwiD" id="51Q7TBbcNKP">
     <property role="EcuMT" value="5797856315685682229" />
     <property role="TrG5h" value="Concept" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="51Q7TBbcNKQ" role="1TKVEi">
       <property role="IQ2ns" value="5797856315685682230" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
