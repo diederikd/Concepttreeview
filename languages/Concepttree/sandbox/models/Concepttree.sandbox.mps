@@ -182,58 +182,116 @@
         </node>
       </node>
       <node concept="3cqZAl" id="2An9ut3uBDb" role="3clF45" />
-    </node>
-    <node concept="3Tm1VV" id="2An9ut3t$cD" role="1B3o_S" />
-    <node concept="2rhieH" id="a6rWUdhAIy" role="lGtFl">
-      <property role="TrG5h" value="jetbrains.mps.baseLanguage.structure.ClassConcept" />
-      <node concept="2rhieG" id="a6rWUdhAIz" role="2rhiex">
-        <property role="TrG5h" value="ClassConcept" />
-        <node concept="2rhieG" id="a6rWUdhAI$" role="2rhieJ">
-          <property role="TrG5h" value="FieldDeclaration" />
-          <node concept="2rhieG" id="a6rWUdhAI_" role="2rhieJ">
-            <property role="TrG5h" value="IntegerType" />
-          </node>
-          <node concept="2rhieG" id="a6rWUdhAIA" role="2rhieJ">
-            <property role="TrG5h" value="IntegerConstant" />
-          </node>
-        </node>
-        <node concept="2rhieG" id="a6rWUdhAIB" role="2rhieJ">
+      <node concept="2rhieH" id="Cu$LnWv4tS" role="lGtFl">
+        <property role="TrG5h" value="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+        <node concept="2rhieG" id="Cu$LnWv4tT" role="2rhiex">
           <property role="TrG5h" value="InstanceMethodDeclaration" />
-          <node concept="2rhieG" id="a6rWUdhAIC" role="2rhieJ">
+          <node concept="2rhieG" id="Cu$LnWv4tU" role="2rhieJ">
             <property role="TrG5h" value="StatementList" />
-            <node concept="2rhieG" id="a6rWUdhAID" role="2rhieJ">
+            <node concept="2rhieG" id="Cu$LnWv4tV" role="2rhieJ">
               <property role="TrG5h" value="IfStatement" />
-              <node concept="2rhieG" id="a6rWUdhAIE" role="2rhieJ">
+              <node concept="2rhieG" id="Cu$LnWv4tW" role="2rhieJ">
                 <property role="TrG5h" value="GreaterThanExpression" />
-                <node concept="2rhieG" id="a6rWUdhAIF" role="2rhieJ">
+                <node concept="2rhieG" id="Cu$LnWv4tX" role="2rhieJ">
                   <property role="TrG5h" value="IntegerConstant" />
                 </node>
-                <node concept="2rhieG" id="a6rWUdhAIG" role="2rhieJ">
+                <node concept="2rhieG" id="Cu$LnWv4tY" role="2rhieJ">
                   <property role="TrG5h" value="VariableReference" />
+                  <node concept="2rhieG" id="Cu$LnWv4tZ" role="2rhieJ">
+                    <property role="TrG5h" value="[FieldDeclaration]" />
+                  </node>
                 </node>
               </node>
-              <node concept="2rhieG" id="a6rWUdhAIH" role="2rhieJ">
+              <node concept="2rhieG" id="Cu$LnWv4u0" role="2rhieJ">
                 <property role="TrG5h" value="StatementList" />
-                <node concept="2rhieG" id="a6rWUdhAII" role="2rhieJ">
+                <node concept="2rhieG" id="Cu$LnWv4u1" role="2rhieJ">
                   <property role="TrG5h" value="ExpressionStatement" />
-                  <node concept="2rhieG" id="a6rWUdhAIJ" role="2rhieJ">
+                  <node concept="2rhieG" id="Cu$LnWv4u2" role="2rhieJ">
                     <property role="TrG5h" value="AssignmentExpression" />
-                    <node concept="2rhieG" id="a6rWUdhAIK" role="2rhieJ">
+                    <node concept="2rhieG" id="Cu$LnWv4u3" role="2rhieJ">
                       <property role="TrG5h" value="IntegerConstant" />
                     </node>
-                    <node concept="2rhieG" id="a6rWUdhAIL" role="2rhieJ">
+                    <node concept="2rhieG" id="Cu$LnWv4u4" role="2rhieJ">
                       <property role="TrG5h" value="VariableReference" />
+                      <node concept="2rhieG" id="Cu$LnWv4u5" role="2rhieJ">
+                        <property role="TrG5h" value="[FieldDeclaration]" />
+                      </node>
                     </node>
                   </node>
                 </node>
               </node>
             </node>
           </node>
-          <node concept="2rhieG" id="a6rWUdhAIM" role="2rhieJ">
+          <node concept="2rhieG" id="Cu$LnWv4u6" role="2rhieJ">
             <property role="TrG5h" value="VoidType" />
           </node>
         </node>
-        <node concept="2rhieG" id="a6rWUdhAIN" role="2rhieJ">
+      </node>
+    </node>
+    <node concept="3Tm1VV" id="2An9ut3t$cD" role="1B3o_S">
+      <node concept="2rhieH" id="Cu$LnWv4tJ" role="lGtFl">
+        <property role="TrG5h" value="jetbrains.mps.baseLanguage.structure.PublicVisibility" />
+        <node concept="2rhieG" id="Cu$LnWv4tK" role="2rhiex">
+          <property role="TrG5h" value="PublicVisibility" />
+        </node>
+      </node>
+    </node>
+    <node concept="2rhieH" id="6ffreh7YIQs" role="lGtFl">
+      <property role="TrG5h" value="jetbrains.mps.baseLanguage.structure.ClassConcept" />
+      <node concept="2rhieG" id="6ffreh7YIQt" role="2rhiex">
+        <property role="TrG5h" value="ClassConcept" />
+        <node concept="2rhieG" id="6ffreh7YIQu" role="2rhieJ">
+          <property role="TrG5h" value="FieldDeclaration" />
+          <node concept="2rhieG" id="6ffreh7YIQv" role="2rhieJ">
+            <property role="TrG5h" value="IntegerType" />
+          </node>
+          <node concept="2rhieG" id="6ffreh7YIQw" role="2rhieJ">
+            <property role="TrG5h" value="IntegerConstant" />
+          </node>
+        </node>
+        <node concept="2rhieG" id="6ffreh7YIQx" role="2rhieJ">
+          <property role="TrG5h" value="InstanceMethodDeclaration" />
+          <node concept="2rhieG" id="6ffreh7YIQy" role="2rhieJ">
+            <property role="TrG5h" value="StatementList" />
+            <node concept="2rhieG" id="6ffreh7YIQz" role="2rhieJ">
+              <property role="TrG5h" value="IfStatement" />
+              <node concept="2rhieG" id="6ffreh7YIQ$" role="2rhieJ">
+                <property role="TrG5h" value="GreaterThanExpression" />
+                <node concept="2rhieG" id="6ffreh7YIQ_" role="2rhieJ">
+                  <property role="TrG5h" value="IntegerConstant" />
+                </node>
+                <node concept="2rhieG" id="6ffreh7YIQA" role="2rhieJ">
+                  <property role="TrG5h" value="VariableReference" />
+                  <node concept="2rhieG" id="6ffreh7YIQB" role="2rhieJ">
+                    <property role="TrG5h" value="[FieldDeclaration]" />
+                  </node>
+                </node>
+              </node>
+              <node concept="2rhieG" id="6ffreh7YIQC" role="2rhieJ">
+                <property role="TrG5h" value="StatementList" />
+                <node concept="2rhieG" id="6ffreh7YIQD" role="2rhieJ">
+                  <property role="TrG5h" value="ExpressionStatement" />
+                  <node concept="2rhieG" id="6ffreh7YIQE" role="2rhieJ">
+                    <property role="TrG5h" value="AssignmentExpression" />
+                    <node concept="2rhieG" id="6ffreh7YIQF" role="2rhieJ">
+                      <property role="TrG5h" value="IntegerConstant" />
+                    </node>
+                    <node concept="2rhieG" id="6ffreh7YIQG" role="2rhieJ">
+                      <property role="TrG5h" value="VariableReference" />
+                      <node concept="2rhieG" id="6ffreh7YIQH" role="2rhieJ">
+                        <property role="TrG5h" value="[FieldDeclaration]" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="2rhieG" id="6ffreh7YIQI" role="2rhieJ">
+            <property role="TrG5h" value="VoidType" />
+          </node>
+        </node>
+        <node concept="2rhieG" id="6ffreh7YIQK" role="2rhieJ">
           <property role="TrG5h" value="PublicVisibility" />
         </node>
       </node>
