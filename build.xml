@@ -5,9 +5,8 @@
   <property name="build.layout" location="${build.dir}/artifacts/Concepttreeview" />
   <property name="mps_home" location="" />
   <property name="alef.home" location="" />
-  <property name="mps_extension_home" location="${basedir}/../../de.itemis.mps.extensions.build/" />
   <property name="artifacts.mps" location="${mps_home}" />
-  <property name="artifacts.de.itemis.mps.extensions" location="${mps_extension_home}" />
+  <property name="artifacts.de.itemis.mps.extensions" location="${basedir}/../../de.itemis.mps.extensions.build" />
   <property file="${artifacts.mps}/build.properties" prefix="import.mps" />
   <property file="${artifacts.de.itemis.mps.extensions}/build.properties" prefix="import.de.itemis.mps.extensions" />
   <property name="mps.build.number" value="${import.mps.mps.build.number}" />
@@ -30,7 +29,8 @@
   
   <path id="path.mps.ant.path">
     <pathelement location="${artifacts.mps}/lib/ant/lib/ant-mps.jar" />
-    <pathelement location="${artifacts.mps}/lib/util.jar" />
+    <pathelement location="${artifacts.mps}/lib/jdom.jar" />
+    <pathelement location="${artifacts.mps}/lib/log4j.jar" />
   </path>
   
   <target name="assemble" depends="classes, declare-mps-tasks">
@@ -44,6 +44,7 @@
         <name>Concepttreeview</name>
         <version>1.0</version>
         <depends>jetbrains.mps.core</depends>
+        <depends>com.mbeddr.mpsutil.treenotations</depends>
         <depends>com.intellij.modules.platform</depends>
         
         <extensions defaultExtensionNs="com.intellij">
@@ -51,25 +52,6 @@
         </extensions>
       </idea-plugin>
     </echoxml>
-    <mkdir dir="${build.tmp}/default/Concepttreeview.zip/Concepttreeview/lib" />
-    <mkdir dir="${build.tmp}/default/Concepttreeview.jar" />
-    <mkdir dir="${build.tmp}/default/Concepttreeview.jar/META-INF" />
-    <echoxml file="${build.tmp}/default/Concepttreeview.jar/META-INF/plugin.xml">
-      <idea-plugin xmlns:xi="http://www.w3.org/2001/XInclude">
-        <id>Concepttreeview</id>
-        <name>Concepttreeview</name>
-        <version>1.0</version>
-        <depends>jetbrains.mps.core</depends>
-        <depends>com.intellij.modules.platform</depends>
-        
-        <extensions defaultExtensionNs="com.intellij">
-          <mps.LanguageLibrary dir="/languages" />
-        </extensions>
-      </idea-plugin>
-    </echoxml>
-    <jar destfile="${build.tmp}/default/Concepttreeview.zip/Concepttreeview/lib/Concepttreeview.jar" duplicate="preserve">
-      <fileset dir="${build.tmp}/default/Concepttreeview.jar" />
-    </jar>
     <mkdir dir="${build.tmp}/default/Concepttreeview.zip/Concepttreeview/languages" />
     <mkdir dir="${build.tmp}/default/Concepttreeview.zip/Concepttreeview/languages/Concepttreeview" />
     <mkdir dir="${build.tmp}/default/Concepttree.jar" />
@@ -94,12 +76,14 @@
           <module ref="9abaaae2-decf-4e97-bf80-9109e8b759cc(jetbrains.mps.lang.messages.api)" kind="rt" />
           <module ref="d7eb0a2a-bd50-4576-beae-e4a89db35f20(jetbrains.mps.lang.scopes.runtime)" kind="rt" />
           <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" kind="rt" />
+          <module ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)" kind="cl" />
           <module ref="a9e4c532-c5f5-4bb7-99ef-42abb73bbb70(jetbrains.mps.lang.descriptor.aspects)" kind="cl" />
         </dependencies>
         <uses>
           <language id="l:c73b17af-16a1-4490-8072-8a84937c5206:com.mbeddr.mpsutil.treenotation" />
           <language id="l:bda054c4-5d71-46ca-aba0-7104e3070b5a:com.mbeddr.mpsutil.treenotation.styles" />
           <language id="l:f3061a53-9226-4cc5-a443-f952ceaf5816:jetbrains.mps.baseLanguage" />
+          <language id="l:443f4c36-fcf5-4eb6-9500-8d06ed259e3e:jetbrains.mps.baseLanguage.classifiers" />
           <language id="l:fd392034-7849-419d-9071-12563d152375:jetbrains.mps.baseLanguage.closures" />
           <language id="l:83888646-71ce-4f1c-9c53-c54016f6ad4f:jetbrains.mps.baseLanguage.collections" />
           <language id="l:f2801650-65d5-424e-bb1b-463a8781b786:jetbrains.mps.baseLanguage.javadoc" />
@@ -206,6 +190,42 @@
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-Concepttree-models" prefix="module/models" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-Concepttree-generator-templates" prefix="module/generator/templates" />
     </jar>
+    <mkdir dir="${build.tmp}/default/Concepttree.sandbox.jar" />
+    <mkdir dir="${build.tmp}/default/Concepttree.sandbox.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/Concepttree.sandbox.jar/META-INF/module.xml">
+      <module namespace="Concepttree.sandbox" type="solution" uuid="0d6f6ff8-f112-41c0-b774-6d19a0016c57">
+        <dependencies>
+          <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" kind="rt" />
+          <module ref="52b81ac7-93fd-4e9e-b972-4995882da6d4(jetbrains.mps.baseLanguage.references.runtime)" kind="rt" />
+        </dependencies>
+        <uses>
+          <language id="l:415fbbae-446d-4483-a7b5-61f29590c045:Concepttree" />
+          <language id="l:f3061a53-9226-4cc5-a443-f952ceaf5816:jetbrains.mps.baseLanguage" />
+        </uses>
+        <classpath>
+          <entry path="." />
+        </classpath>
+        <sources jar="Concepttree.sandbox-src.jar" descriptor="Concepttree.sandbox.msd" />
+      </module>
+    </echoxml>
+    <jar destfile="${build.tmp}/default/Concepttreeview.zip/Concepttreeview/languages/Concepttreeview/Concepttree.sandbox.jar" duplicate="preserve">
+      <fileset dir="${build.tmp}/java/out/Concepttree.sandbox" />
+      <fileset dir="${basedir}/languages/Concepttree/sandbox/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
+      <fileset dir="${build.tmp}/default/Concepttree.sandbox.jar" />
+    </jar>
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-Concepttree-sandbox-models">
+      <fileset dir="${basedir}/languages/Concepttree/sandbox/models" includes="**/*.mps, **/*.mpsr, **/.model" />
+    </copyModels>
+    <jar destfile="${build.tmp}/default/Concepttreeview.zip/Concepttreeview/languages/Concepttreeview/Concepttree.sandbox-src.jar" duplicate="preserve">
+      <fileset dir="${basedir}/languages/Concepttree/sandbox/source_gen">
+        <exclude name="**/trace.info" />
+        <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
+      </fileset>
+      <zipfileset file="${basedir}/languages/Concepttree/sandbox/Concepttree.sandbox.msd" prefix="module" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-Concepttree-sandbox-models" prefix="module/models" />
+    </jar>
     <mkdir dir="${build.tmp}/default/ConceptExplorerPlugin.jar" />
     <mkdir dir="${build.tmp}/default/ConceptExplorerPlugin.jar/META-INF" />
     <echoxml file="${build.tmp}/default/ConceptExplorerPlugin.jar/META-INF/module.xml">
@@ -227,10 +247,12 @@
           <module ref="415fbbae-446d-4483-a7b5-61f29590c045(Concepttree)" kind="cl" />
           <module ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224(MPS.Editor)" kind="cl" />
           <module ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5(MPS.IDEA)" kind="cl" />
+          <module ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)" kind="cl" />
         </dependencies>
         <uses>
           <language id="l:f3061a53-9226-4cc5-a443-f952ceaf5816:jetbrains.mps.baseLanguage" />
           <language id="l:63650c59-16c8-498a-99c8-005c7ee9515d:jetbrains.mps.lang.access" />
+          <language id="l:af65afd8-f0dd-4942-87d9-63a55f2a9db1:jetbrains.mps.lang.behavior" />
           <language id="l:18bc6592-03a6-4e29-a83a-7ff23bde13ba:jetbrains.mps.lang.editor" />
           <language id="l:28f9e497-3b42-4291-aeba-0a1039153ab1:jetbrains.mps.lang.plugin" />
           <language id="l:ef7bf5ac-d06c-4342-b11d-e42104eb9343:jetbrains.mps.lang.plugin.standalone" />
@@ -277,7 +299,7 @@
     <delete dir="${build.layout}" />
   </target>
   
-  <target name="compileJava" depends="java.compile.Concepttree, java.compile.Concepttree.generator, java.compile.ConceptExplorerPlugin" />
+  <target name="compileJava" depends="java.compile.Concepttree, java.compile.Concepttree.generator, java.compile.Concepttree.sandbox, java.compile.ConceptExplorerPlugin" />
   
   <target name="processResources" />
   
@@ -410,13 +432,15 @@
         <module file="${basedir}/solutions/ConceptExplorerPlugin/ConceptExplorerPlugin.msd" />
         <module file="${basedir}/languages/Concepttree/Concepttree.mpl" />
       </chunk>
+      <chunk>
+        <module file="${basedir}/languages/Concepttree/sandbox/Concepttree.sandbox.msd" />
+      </chunk>
       <jvmargs>
         <arg value="-ea" />
         <arg value="-Xmx512m" />
       </jvmargs>
       <macro name="mps_home" path="${mps_home}" />
       <macro name="alef.home" path="${alef.home}" />
-      <macro name="mps_extension_home" path="${mps_extension_home}" />
     </generate>
   </target>
   
@@ -464,8 +488,9 @@
         <fileset file="${artifacts.mps}/lib/mps-textgen.jar" />
         <fileset file="${artifacts.mps}/lib/annotations.jar" />
         <fileset dir="${artifacts.mps}/lib" includes="*.jar" />
-        <fileset file="${artifacts.mps}/lib/util.jar" />
-        <fileset file="${artifacts.mps}/lib/3rd-party.jar" />
+        <fileset file="${artifacts.mps}/lib/log4j.jar" />
+        <fileset file="${artifacts.mps}/lib/jdom.jar" />
+        <fileset file="${artifacts.mps}/lib/trove4j.jar" />
         <fileset file="${artifacts.mps}/lib/ecj-4.16.jar" />
         <fileset file="${artifacts.de.itemis.mps.extensions}/com.mbeddr.mpsutil.treenotations/languages/group.treenotation/com.mbeddr.mpsutil.treenotation.runtime.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.runtime.jar" />
@@ -515,11 +540,26 @@
         <pathelement path="${build.tmp}/java/out/Concepttree" />
         <fileset file="${artifacts.mps}/lib/annotations.jar" />
         <fileset dir="${artifacts.mps}/lib" includes="*.jar" />
-        <fileset file="${artifacts.mps}/lib/util.jar" />
-        <fileset file="${artifacts.mps}/lib/3rd-party.jar" />
+        <fileset file="${artifacts.mps}/lib/log4j.jar" />
+        <fileset file="${artifacts.mps}/lib/jdom.jar" />
+        <fileset file="${artifacts.mps}/lib/trove4j.jar" />
         <fileset file="${artifacts.mps}/lib/ecj-4.16.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.runtime.jar" />
         <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
+      </classpath>
+    </javac>
+  </target>
+  
+  <target name="java.compile.Concepttree.sandbox" depends="fetchDependencies">
+    <mkdir dir="${basedir}/languages/Concepttree/sandbox/source_gen" />
+    <mkdir dir="${build.tmp}/java/out/Concepttree.sandbox" />
+    <javac destdir="${build.tmp}/java/out/Concepttree.sandbox" fork="true" encoding="utf8" includeantruntime="false" debug="true">
+      <compilerarg value="-Xlint:none" />
+      <src>
+        <path location="${basedir}/languages/Concepttree/sandbox/source_gen" />
+      </src>
+      <classpath>
+        <fileset file="${artifacts.mps}/lib/mps-references.jar" />
       </classpath>
     </javac>
   </target>
@@ -565,8 +605,9 @@
         <fileset file="${artifacts.mps}/lib/mps-workbench.jar" />
         <fileset file="${artifacts.mps}/lib/annotations.jar" />
         <fileset dir="${artifacts.mps}/lib" includes="*.jar" />
-        <fileset file="${artifacts.mps}/lib/util.jar" />
-        <fileset file="${artifacts.mps}/lib/3rd-party.jar" />
+        <fileset file="${artifacts.mps}/lib/log4j.jar" />
+        <fileset file="${artifacts.mps}/lib/jdom.jar" />
+        <fileset file="${artifacts.mps}/lib/trove4j.jar" />
         <fileset file="${artifacts.mps}/lib/ecj-4.16.jar" />
         <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
         <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.scopes.runtime.jar" />
@@ -578,5 +619,6 @@
     <delete dir="${basedir}/solutions/ConceptExplorerPlugin/source_gen" />
     <delete dir="${basedir}/languages/Concepttree/source_gen" />
     <delete dir="${basedir}/languages/Concepttree/generator/source_gen" />
+    <delete dir="${basedir}/languages/Concepttree/sandbox/source_gen" />
   </target>
 </project>
